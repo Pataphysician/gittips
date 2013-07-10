@@ -6,7 +6,7 @@ First, you must create your branch locally. Create a branch for every feature yo
 
 # Basic Workflow #
 
-	git add .
+	git add -A .
 	git commit -m "message"
 	git status
 
@@ -74,3 +74,8 @@ The last option we need to set will tell git that you don't want to type your us
 By default git will cache your password for 15 minutes. This can be change like so, with timeout setting in seconds.
 	
 	git config --global credential.helper 'cache --timeout=3600'
+
+#restore a file killed by a pull#
+
+git log --diff-filter=D
+git checkout $commit~1 file/to/restore.jpg
